@@ -1,30 +1,22 @@
 import 'package:flutter/material.dart';
+import 'routes.dart';
+import 'screens/splash/splash_screen.dart';
+import 'theme.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const Netflix());
+}
 
-class MyApp extends StatelessWidget {
+class Netflix extends StatelessWidget {
+  const Netflix({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Home(),
+      debugShowCheckedModeBanner: false,
+      theme: theme(),
+      initialRoute: SplashScreen.routeName,
+      routes: route,
     );
   }
-}
-
-class Home extends StatelessWidget {
-  const Home({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Material App Bar'),
-      ),
-      body: Center(
-        child: Container(
-          child: Text('Hello World'),
-        ),
-      ),
-    );
-  }
-}
+} 
